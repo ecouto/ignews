@@ -1,3 +1,4 @@
+import { Console } from 'console';
 import { query as q } from 'faunadb';
 import { NextApiRequest, NextApiResponse } from 'next';
 import { getSession } from 'next-auth/client'
@@ -16,6 +17,7 @@ type User = {
 
 
 export default async (req: NextApiRequest, res: NextApiResponse) => {
+
     if (req.method === 'POST') {
         const session = await getSession({ req });
 
